@@ -10,6 +10,9 @@ TEST_CASE("TextItem::TextItem(std::string text, std::shared_ptr<MenuItem> parent
     std::shared_ptr<MenuItem> right = std::make_shared<MenuItem>("right", nullptr);
     TextItem* textItem = new TextItem(text, parent, left, right);
     REQUIRE(textItem->GetText() == text);
+    REQUIRE(textItem->GetParent() == parent);
+    REQUIRE(textItem->Next() == left);
+    REQUIRE(textItem->Previous() == right);
 }
 
 
@@ -19,5 +22,8 @@ TEST_CASE("TextItem::TextItem(std::string text, std::shared_ptr<MenuItem> parent
     std::shared_ptr<MenuItem> parent = std::make_shared<MenuItem>("parent", nullptr);
     TextItem* textItem = new TextItem(text, parent);
     REQUIRE(textItem->GetText() == text);
+    REQUIRE(textItem->GetParent() == parent);
+    REQUIRE(textItem->Next() == nullptr);
+    REQUIRE(textItem->Previous() == nullptr);
 }
 
