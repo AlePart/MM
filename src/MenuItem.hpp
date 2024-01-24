@@ -1,3 +1,6 @@
+#ifndef MENUITEM_HPP
+#define MENUITEM_HPP
+
 #include <IMenuItem.hpp>
 
 class MenuItem : public IMenuItem
@@ -8,8 +11,8 @@ public:
     std::shared_ptr<IMenuItem> GetParent() const override;
     std::shared_ptr<IMenuItem> Next() const override;
     std::shared_ptr<IMenuItem> Previous() const override;
-    void SetLeft(std::shared_ptr<IMenuItem> left) override;
-    void SetRight(std::shared_ptr<IMenuItem> right) override;
+    void SetNext(std::shared_ptr<IMenuItem> left) override;
+    void SetPrevious(std::shared_ptr<IMenuItem> right) override;
     virtual ~MenuItem() = default;
 private:
     std::string m_text;
@@ -18,4 +21,4 @@ private:
     std::shared_ptr<IMenuItem> m_previous;
 };
 
-
+#endif //MENUITEM_HPP

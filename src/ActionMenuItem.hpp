@@ -1,3 +1,5 @@
+#ifndef ACTIONMENUITEM_HPP
+#define ACTIONMENUITEM_HPP
 
 #include <TextItem.hpp>
 #include <IActionMenuItem.hpp>
@@ -13,3 +15,5 @@ private:
     std::function<void()> m_action;
 
 };
+
+#endif //ACTIONMENUITEM_HPP

@@ -1,3 +1,5 @@
+#ifndef IINPUTMENUITEM_HPP
+#define IINPUTMENUITEM_HPP
 
 #include <ITextItem.hpp>
 template<typename T>
@@ -8,3 +10,5 @@ public:
     virtual T GetData() const = 0;
     virtual ~IInputMenuItem() = default;
 };
+
+#endif //IINPUTMENUITEM_HPP
